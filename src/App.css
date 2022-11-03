@@ -1,15 +1,22 @@
 body {
-  background: rgb(131, 58, 180);
+ 
   background: linear-gradient(
     90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
+    rgb(21, 19, 23) 0%,
+    rgb(6, 6, 8) 50%,
+    rgb(5, 11, 7) 100%
   );
 }
 
 .wrapper {
+ 
   height: 100vh;
   max-width: 1000px;
   margin: auto;
 }
+
+.container{
+  color: aliceblue;
+  box-shadow: inset rgba(0, 0, 0, 0.7);
+}
+

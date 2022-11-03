@@ -3,44 +3,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Title } from "./components/Title";
 import { Form } from "./components/Form";
 import { ListArea } from "./components/ListArea";
-import { useState } from "react";
 
 function App() {
-  const [taskList, setTaskList] = useState([]);
-
-  const addTask = (data) => {
-    setTaskList([...taskList, data]);
-  };
-
-  const switchTask = (_id) => {
-    console.log(_id);
-
-    const temArg = taskList.map((item, index) => {
-      if (item._id === _id) {
-        item.type = "bad";
-      }
-      return item;
-    });
-    setTaskList(temArg);
-  };
   return (
     <div className="wrapper">
       <div className="container">
-        {/* <!-- top title --> */}
-        <Title />
-
-        {/* <!-- form area --> */}
-        <Form addTask={addTask} />
-
-        {/* <!-- list area --> */}
-        <ListArea taskList={taskList} switchTask={switchTask} />
-
-        {/* <!-- total hr area --> */}
-        <div className="row fw-bold">
-          <div className="col">
-            The total hours allocated = <span id="totalHrs">0</span> Hrs
-          </div>
+        <div className="row">
+          <div className="col mt-5 p-5 text-center fw-bold "> <h1>Daily Task Manager</h1></div>
         </div>
+
+        {/* <!-- FORM AREA --> */}
+        <Form />
+        
+        {/* <!-- ListArea --> */}
+       <ListArea />
+
+        <h6>
+          Total Time Allocated <span>0</span> hours
+        </h6>
       </div>
     </div>
   );
